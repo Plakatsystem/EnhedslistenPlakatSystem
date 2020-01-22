@@ -1,0 +1,26 @@
+<div>
+  <h2 class="text-center">Rediger plakat</h2>
+  <mat-dialog-content class="edit-poster">
+    <mat-form-field>
+      <input matInput placeholder="Plakat navn" [(ngModel)]="poster.name" (change)="poster.name = poster.name.trim()" [formControl]="name" required (focus)="inputFocus()" (focusout)="notFocused=true">
+      <mat-error *ngIf="name.invalid">Angiv venligst et plakatnavn</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Antal bestilte plakater" [(ngModel)]="poster.stock" type="number" [formControl]="amount" required>
+      <mat-error *ngIf="amount.invalid">Angiv antal plakater</mat-error>
+    </mat-form-field>
+  </mat-dialog-content>
+  <p class="text-color-red" *ngIf="error && notFocused">{{error}}</p>
+  <mat-dialog-actions>
+    <button mat-button class="create-button red" (click)="cancel()"><i
+      class="material-icons icon-cancel-color alt-red">
+      clear
+    </i>ANNULER
+    </button>
+    <button mat-button class="create-button green" (click)="updatePoster()"><i
+      class="material-icons icon-color">
+      done
+    </i>GEM
+    </button>
+  </mat-dialog-actions>
+</div>

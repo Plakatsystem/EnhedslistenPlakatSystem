@@ -1,0 +1,16 @@
+<div style="height: 100%; width: 100%">
+  <h2>Er du sikker på du vil nedtage <strong>{{hungPoster.posterName}}</strong>?</h2>
+  <p class="delete">Hvis du nedtager plakaten, vil alle informationer om plakaten blive slettet.</p>
+  <mat-dialog-actions>
+    <button mat-button class="cancel-btn red" (click)="cancel()"><i
+      class="material-icons icon-cancel-color alt-red">
+      clear
+    </i>NEJ
+    </button>
+    <button mat-button class="accept-btn green" (click)="delete()"><i
+      class="material-icons icon-color">
+      done
+    </i>JA
+    </button>
+  </mat-dialog-actions>
+</div>

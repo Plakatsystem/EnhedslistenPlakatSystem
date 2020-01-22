@@ -1,0 +1,65 @@
+<app-navbar></app-navbar>
+<div class="container container-web" style="padding: 0;">
+
+  <div id="map" #map [ngClass]="{'showCenter': showCenter}" style="width:100%;height:100%"></div>
+  <div class="color-explaination-div-web" *ngIf="role != 'ADMIN'">
+    <span *ngIf="role != 'MANAGER'">
+      <svg width="20px" height="20px">
+        <circle cx="8" cy="8" r="8" fill="#F18A2D"/>
+      </svg>
+      <span>Mit team</span>
+      <br/>
+    </span>
+    <svg width="20px" height="20px">
+      <circle cx="8" cy="8" r="8" fill="#D0004D"/>
+    </svg>
+    <span>Min afdeling</span>
+    <br/>
+    <svg width="20px" height="20px">
+      <circle cx="8" cy="8" r="8" fill="#703290"/>
+    </svg>
+    <span>Andre afdelinger</span>
+  </div>
+
+  <div class="row" *ngIf="router.url.includes('hang-poster/map')">
+    <div class="center-margin" style="margin-bottom: 0">
+      <button mat-button class="hang-btn green" (click)="hangPoster()"><i
+        class="material-icons icon-color">
+        check
+      </i>HÆNG PLAKAT
+      </button>
+    </div>
+  </div>
+
+  <div class="color-explaination-div"
+       *ngIf="!router.url.includes('hang-poster/map/') && !router.url.includes('edit-hung-poster/map/')">
+    <span *ngIf="role != 'MANAGER'">
+      <svg width="20px" height="20px" class="myTeam-circle">
+        <circle cx="8" cy="8" r="8" fill="#F18A2D"/>
+      </svg>
+      <span>Mit team</span>
+      <br>
+    </span>
+    <svg width="20px" height="20px" class="myDepartment-circle">
+      <circle cx="8" cy="8" r="8" fill="#D0004D"/>
+    </svg>
+    <span>Min afdeling</span>
+    <br>
+    <svg width="20px" height="20px" class="otherDepartments-circle">
+      <circle cx="8" cy="8" r="8" fill="#703290"/>
+    </svg>
+    <span>Andre afdelinger</span>
+  </div>
+
+  <div class="row" *ngIf="router.url.includes('edit-hung-poster/map/')">
+    <div class="center-margin">
+      <button mat-button class="hang-btn green" (click)="updatePoster()"><i
+        class="material-icons icon-color">
+        check
+      </i>BEKRÆFT
+      </button>
+    </div>
+  </div>
+</div>
+<button id="editButton" class="hiddenButton" (click)="editHungPoster()"></button>
+<button id="deleteButton" class="hiddenButton" (click)="deletePoster()"></button>

@@ -1,0 +1,72 @@
+<app-navbar></app-navbar>
+<div class="container-outer">
+  <div class="container container-web">
+    <h1 class="text-center">PLAKATER</h1>
+    <div class="center-margin table-div">
+
+
+      <mat-form-field style="width: 250px!important; padding-right: 0 !important;">
+        <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Søg" autocomplete="off">
+      </mat-form-field>
+      <mat-table [dataSource]="dataSource" class="mat-elevation-z3" matSort>
+        <mat-header-row *matHeaderRowDef="columnList" class="red header"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: columnList, let i = index;"></mat-row>
+
+        <ng-container matColumnDef="name">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>PLAKAT</mat-header-cell>
+          <mat-cell id="poster-name" *matCellDef="let poster">
+            {{poster.name}}
+          </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="stock">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>BESTILT BEHOLDNING</mat-header-cell>
+          <mat-cell *matCellDef="let poster">
+            {{poster.stock}}
+          </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="remainingStock">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>AKTUEL BEHOLDNING</mat-header-cell>
+          <mat-cell *matCellDef="let poster">
+            {{poster.remainingStock}}
+          </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="hungPosters">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>ANTAL OPHÆNGTE</mat-header-cell>
+          <mat-cell *matCellDef="let poster">
+            {{poster.hungPosterAmount}}
+          </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="edit">
+          <mat-header-cell *matHeaderCellDef></mat-header-cell>
+
+          <mat-cell class="poster-btn" *matCellDef="let poster">
+            <div>
+              <button mat-icon-button class="edit-btn">
+                <mat-icon class="icon-edit" (click)="edit(poster)" matTooltipClass="tooltipClass" matTooltip="Rediger" matTooltipPosition="above" matTooltipShowDelay="750" matTooltipHideDelay="250">
+                  edit
+                </mat-icon>
+              </button>
+              <button mat-icon-button>
+                <mat-icon (click)="openDelete(poster)" matTooltipClass="tooltipClass" matTooltip="Slet" matTooltipPosition="above" matTooltipShowDelay="750" matTooltipHideDelay="250">
+                  delete
+                </mat-icon>
+              </button>
+            </div>
+          </mat-cell>
+        </ng-container>
+      </mat-table>
+      <mat-paginator [pageSizeOptions]="[5, 10, 25, 50, 100]"></mat-paginator>
+
+      <button mat-button class="create-button green" (click)="openCreatePosterDialog()"><i
+        class="material-icons icon-color">
+        add
+      </i>OPRET PLAKAT
+      </button>
+
+    </div>
+  </div>
+</div>

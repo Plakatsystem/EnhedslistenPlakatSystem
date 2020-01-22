@@ -1,0 +1,112 @@
+/* Structure */
+table {
+  width: 80%;
+}
+
+h1 {
+  font-family: Maj-Bold, "Helvetica Neue", sans-serif !important;
+  padding: 3%;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+  padding-right: 25%;
+}
+
+mat-cell {
+  font-family: Maj-Regular, "Helvetica Neue", sans-serif !important;
+}
+
+mat-header-cell {
+  font-family: Maj-Regular, "Helvetica Neue", sans-serif !important;
+}
+
+.department-btn {
+  display:flex;
+  justify-content:flex-end;
+}
+
+.table-div {
+  width: 80%;
+}
+
+.flex-end {
+  justify-content: flex-end;
+}
+
+.edit-btn {
+  margin-right: 20px;
+}
+.reset-pass-btn {
+  margin-right: 20px;
+}
+
+.edit-department {
+  padding-top: 3px;
+}
+
+.accept-btn {
+  color: #159F6B !important;
+}
+
+.cancel-btn {
+  color: #D0004D !important;
+}
+
+button:focus {
+  outline: 0;
+}
+
+@media only screen and (min-device-width: 375px) and (max-device-width: 812px) {
+  .table-div {
+    width: 100%;
+  }
+}
+
+mat-header-cell {
+  color: white;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+}
+
+.mat-icon {
+  color: #7b7b7b;
+}
+
+.mat-icon:hover {
+  color: #8f8f8f;
+  cursor: pointer;
+}
+
+.create-button {
+  border-radius: 0;
+  color: white;
+  width: 170px;
+  margin-top: 15px;
+  margin-bottom: 30px;
+  padding-left: 0;
+  float: left;
+  box-shadow: #878787 0 0 8px;
+  font-family: Maj-Regular, "Helvetica Neue", sans-serif !important;
+}
+
+.icon-color {
+  background-color: #158a6b;
+  border-radius: 0;
+  color: white;
+  float: left;
+  padding-top: 6px;
+  width: 36px;
+  height: 36px;
+  margin-right: 12px;
+}
+
+.container-outer {
+  display: flex;
+  align-items: center;
+}
+
+.container-web {
+  min-height: 600px;
+}

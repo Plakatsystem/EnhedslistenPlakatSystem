@@ -1,0 +1,64 @@
+<div *ngIf="!error">
+  <div *ngIf="!done">
+    <h2>Hvilken type team ønsker du at oprette?</h2>
+    <mat-radio-group [(ngModel)]="teamType">
+      <mat-radio-button id="hang-team" value="O" name="teamType">
+        Ophængning
+      </mat-radio-button>
+      <br/>
+      <mat-radio-button id="down-team" value="N" name="teamType">
+        Nedtagning
+      </mat-radio-button>
+    </mat-radio-group>
+
+    <mat-dialog-actions>
+      <button mat-button class="cancel-button red" (click)="cancel()"><i
+        class="material-icons icon-cancel-color alt-red">
+        clear
+      </i>ANNULLER
+      </button>
+      <button mat-button class="create-button green" (click)="createTeam()"><i
+        class="material-icons icon-color">
+        arrow_forward
+      </i>OPRET
+      </button>
+    </mat-dialog-actions>
+  </div>
+  <div *ngIf="done">
+    <div class="d-print-none">
+      <h2>Du har oprettet et nyt team</h2>
+      <mat-dialog-content>
+        <p id="username"><strong>Team:</strong> {{data.username}}</p>
+        <p id="password"><strong>Adgangskode:</strong> {{data.password}}</p>
+      </mat-dialog-content>
+      <p>HUSK at notere team og dgangskode, du kan ikke se koden igen efterfølgende!</p>
+      <mat-dialog-actions>
+        <button mat-button class="close-button green" (click)="cancel()"><i
+          class="material-icons icon-color">
+          arrow_forward
+        </i>LUK
+        </button>
+        <button mat-button class="print-button blue" (click)="print()"><i
+          class="material-icons icon-color-blue">
+          print
+        </i>PRINT
+        </button>
+      </mat-dialog-actions>
+    </div>
+    <div class="d-none d-print-block">
+      <p>Afdeling: {{data.department}}</p>
+      <p>Team: {{data.username}}</p>
+      <p>Team adgangskode: {{data.password}}</p>
+      <br><br>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="error" class="center-margin">
+  <p>Der skete en uventet fejl, prøv igen</p>
+  <button mat-button class="close-button green" (click)="cancel()" style="margin-bottom: 0; margin-left: 35px"><i
+    class="material-icons icon-color">
+    arrow_forward
+  </i>LUK
+  </button>
+</div>

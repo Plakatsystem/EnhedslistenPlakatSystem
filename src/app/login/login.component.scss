@@ -1,0 +1,72 @@
+.center-text {
+  text-align: center;
+}
+
+.login-header {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.login-card {
+  max-width: 600px;
+  margin-top: 30%;
+  border-radius: 0;
+}
+
+.login-input {
+  max-width: 900px;
+}
+
+.login-button {
+  border-radius: 0;
+  color: white;
+  width: 130px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding-left: 0;
+  float: right;
+  box-shadow: #878787 0 0 8px;
+  font-family: Maj-Bold, "Helvetica Neue", sans-serif;
+}
+
+.icon-color-blue {
+  background-color: #3c3dd6;
+  border-radius: 0;
+  color: white;
+  float: left;
+  padding-top: 6px;
+  width: 36px;
+  height: 36px;
+}
+
+.icon-color {
+  background-color: #158a6b;
+  border-radius: 0;
+  color: white;
+  float: left;
+  padding-top: 6px;
+  width: 36px;
+  height: 36px;
+  margin-right: 12px;
+}
+
+.icon-color:hover{
+  cursor: pointer;
+}
+
+.text-color-red{
+  color: #F44336;
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 812px) {
+  .container {
+    margin: 0;
+  }
+  .login-card {
+    width: 100%;
+  }
+  .col-md-6 {
+    margin: 0;
+    padding: 0;
+  }
+}

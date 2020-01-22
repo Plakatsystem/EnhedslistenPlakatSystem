@@ -1,0 +1,90 @@
+<app-navbar></app-navbar>
+<div class="container container-web menu-box">
+  <div class="row">
+    <div class="col-md-6 menu">
+      <div class="center-margin">
+        <div>
+          <button id="teams" *ngIf="authService.getUserData().role.toUpperCase() === authService.roles.manager" mat-button class="menu-btn purple" routerLink="/teams">
+            <i class="material-icons icon alt-purple">
+              people
+            </i>
+            <div class="div-btn">
+              TEAMS
+            </div>
+          </button>
+        </div>
+        <div>
+          <button id="posters" *ngIf="authService.getUserData().role.toUpperCase() === authService.roles.manager" mat-button class=" menu-btn red" routerLink="/posters">
+            <i class="material-icons icon alt-red">
+              perm_contact_calendar
+            </i>
+            <div class="div-btn">
+              PLAKATER
+            </div>
+          </button>
+        </div>
+        <div>
+          <button id="hang-poster" *ngIf="authService.getUserData().role.toUpperCase() === authService.roles.team && authService.getUserData().username.includes('O')" mat-button class=" menu-btn purple" routerLink="/hang-poster">
+            <i class="material-icons icon alt-purple">
+              perm_contact_calendar
+            </i>
+            <div class="div-btn">
+              HÆNG PLAKAT
+            </div>
+          </button>
+        </div>
+        <div>
+        <button id="edit-hung-poster" *ngIf="authService.getUserData().role.toUpperCase() === authService.roles.team && authService.getUserData().username.includes('O')" mat-button class=" menu-btn red" routerLink="/edit-hung-poster">
+          <i class="material-icons icon alt-red">
+            edit
+          </i>
+          <div class="div-btn">
+            REDIGER PLAKAT
+          </div>
+        </button>
+        </div>
+        <div>
+          <button *ngIf="authService.getUserData().role.toUpperCase() === authService.roles.team && authService.getUserData().username.includes('N')" mat-button class=" menu-btn red" routerLink="/edit-hung-poster">
+            <i class="material-icons icon alt-red">
+              perm_contact_calendar
+            </i>
+            <div class="div-btn">
+              NEDTAG PLAKAT
+            </div>
+          </button>
+        </div>
+        <div>
+            <button id="departments" *ngIf="authService.getUserData().role.toUpperCase() === authService.roles.admin" mat-button class="menu-btn purple" routerLink="/departments">
+              <i class="material-icons icon alt-purple">
+                people
+              </i>
+              <div class="div-btn">
+                AFDELINGER
+              </div>
+            </button>
+          </div>
+        <div>
+          <button id="map" mat-button class=" menu-btn green" routerLink="/map" *ngIf="authService.getUserData().role.toUpperCase() === authService.roles.team || authService.getUserData().role.toUpperCase() === authService.roles.manager || authService.getUserData().role.toUpperCase() === authService.roles.admin">
+            <i class="material-icons icon alt-green">
+              map
+            </i>
+            <div class="div-btn">
+              KORT
+            </div>
+          </button>
+        </div>
+        <div>
+          <button id="manual" (click)="openGuideDialog()" *ngIf="authService.getUserData().role.toUpperCase() === authService.roles.team || authService.getUserData().role.toUpperCase() === authService.roles.manager || authService.getUserData().role.toUpperCase() === authService.roles.admin" mat-button class="menu-btn yellow">
+            <i class="material-icons icon alt-yellow">
+              help_outline
+            </i>
+            <div class="div-btn">
+              MANUAL
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

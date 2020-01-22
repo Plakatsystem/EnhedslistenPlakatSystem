@@ -1,0 +1,33 @@
+.center-box {
+  position: relative;
+  transform: translateY(-50%);
+  top: 30%;
+}
+
+.accept-btn {
+  border-radius: 0;
+  color: white;
+  margin-top: 20%;
+  width: 170px;
+  padding-left: 0;
+  box-shadow: #878787 0 0 8px;
+  font-family: Maj-Regular, "Helvetica Neue", sans-serif !important;
+}
+
+.icon-color {
+  background-color: #158a6b;
+  border-radius: 0;
+  color: white;
+  float: left;
+  padding-top: 6px;
+  width: 36px;
+  height: 36px;
+}
+
+h1 {
+  padding-top: 10%;
+}
+
+mat-form-field {
+  margin-top: 10%;
+}

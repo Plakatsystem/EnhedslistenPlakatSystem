@@ -1,0 +1,69 @@
+<app-navbar></app-navbar>
+<div class="container-outer">
+  <div class="container container-web">
+    <h1 class="text-center">AFDELINGER</h1>
+    <div class="center-margin table-div">
+
+
+      <mat-form-field style="width: 250px!important; padding-right: 0 !important;">
+        <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Søg" autocomplete="off">
+      </mat-form-field>
+      <mat-table [dataSource]="dataSource" class="mat-elevation-z3" matSort>
+        <mat-header-row *matHeaderRowDef="columnList" class="purple header"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: columnList, let i = index;"></mat-row>
+
+        <ng-container matColumnDef="name">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>AFDELING</mat-header-cell>
+          <mat-cell id="department-name" *matCellDef="let department">
+            {{department.name}}
+          </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="manager">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>MANAGER</mat-header-cell>
+          <mat-cell *matCellDef="let department">
+            {{department.manager}}
+          </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="password">
+          <mat-header-cell *matHeaderCellDef>ADGANGSKODE</mat-header-cell>
+          <mat-cell *matCellDef="let department">**********
+          </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="edit">
+          <mat-header-cell *matHeaderCellDef></mat-header-cell>
+
+          <mat-cell class="department-btn" *matCellDef="let department">
+            <div>
+              <button mat-icon-button class="edit-btn">
+                <mat-icon class="icon-edit" (click)="edit(department)" matTooltipClass="tooltipClass" matTooltip="Rediger" matTooltipPosition="above" matTooltipShowDelay="750" matTooltipHideDelay="250">
+                  edit
+                </mat-icon>
+              </button>
+              <button mat-icon-button class="reset-pass-btn">
+                <mat-icon class="icon-reset" (click)="resetManagerPassword(department)" matTooltipClass="tooltipClass" matTooltip="Nulstil kode" matTooltipPosition="above" matTooltipShowDelay="750" matTooltipHideDelay="250">
+                  cached
+                </mat-icon>
+              </button>
+              <button mat-icon-button class="delete-button">
+                <mat-icon (click)="openDelete(department)" matTooltipClass="tooltipClass" matTooltip="Slet" matTooltipPosition="above" matTooltipShowDelay="750" matTooltipHideDelay="250">
+                  delete
+                </mat-icon>
+              </button>
+            </div>
+          </mat-cell>
+        </ng-container>
+      </mat-table>
+      <mat-paginator [pageSizeOptions]="[5, 10, 25, 50, 100]"></mat-paginator>
+
+      <button mat-button class="create-button green" (click)="openCreateDepartmentDialog()"><i
+        class="material-icons icon-color">
+        add
+      </i>OPRET AFDELING
+      </button>
+
+
+    </div>
+  </div>
+</div>

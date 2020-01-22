@@ -1,0 +1,49 @@
+<app-navbar></app-navbar>
+<div class="container container-web">
+<h1 class="text-center">REDIGER PLAKAT</h1>
+  <div class="center-box">
+    <div class="row">
+      <div class="center-margin">
+        <mat-form-field>
+          <mat-select [(ngModel)]="hungPoster.posterName" value="{{hungPoster.posterName}}" required [formControl]="choosePoster">
+            <mat-option *ngFor="let poster of posters" [value]="poster.name">
+              {{poster.name}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row">
+      <div class="center-margin">
+        <mat-form-field>
+          <input matInput placeholder="Antal ophængte plakater" type="number" min="0" [(ngModel)]="hungPoster.amount" required [formControl]="chooseAmount">
+          <mat-error *ngIf="chooseAmount.invalid">Angiv antal ophængte plakater</mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row">
+      <div class="center-margin">
+        <button mat-button class="accept-btn green" (click)="updatePoster()"><i
+          class="material-icons icon-color">
+          arrow_forward
+        </i>VÆLG PLACERING
+        </button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="center-margin">
+        <h4>eller</h4>
+      </div>
+    </div>
+    <div class="row">
+            <div class="center-margin">
+              <button style="padding-right: 10px" mat-button class="accept-btn red" (click)="deletePoster()"><i
+                class="material-icons icon-color icon-red">
+                delete
+              </i>SLET OPHÆNGNING
+              </button>
+            </div>
+          </div>
+  </div>
+</div>
+<router-outlet></router-outlet>

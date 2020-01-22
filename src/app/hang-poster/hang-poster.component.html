@@ -1,0 +1,40 @@
+<app-navbar *ngIf="router.url === '/hang-poster' && !router.url.includes('/map')"></app-navbar>
+<div class="container container-web" *ngIf="router.url === '/hang-poster'">
+  <h1 class="text-center">HÆNG PLAKAT</h1>
+  <div class="center-box">
+    <div class="row">
+      <div class="center-margin">
+        <mat-form-field>
+          <mat-label>Vælg plakat</mat-label>
+          <mat-select class="select-poster" [(ngModel)]="poster" required [formControl]="choosePoster">
+            <mat-option disabled="true">Vælg en plakat</mat-option>
+            <mat-option *ngIf="dataSource.filteredData.length === 0">Denne afdeling har ingen plakater</mat-option>
+            <mat-option *ngFor="let poster of dataSource.filteredData" [value]="poster">
+              {{poster.name}}
+            </mat-option>
+          </mat-select>
+          <mat-error *ngIf="choosePoster.invalid">Vælg plakat</mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row">
+      <div class="center-margin">
+        <mat-form-field>
+          <input matInput placeholder="Antal ophængte plakater" pattern="[0-9]*" type="number" min="0"
+                 [(ngModel)]="amount" required [formControl]="chooseAmount">
+          <mat-error *ngIf="chooseAmount.invalid">Angiv antal ophængte plakater</mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row">
+      <div class="center-margin">
+        <button mat-button class="accept-btn green" (click)="newPoster()"><i
+          class="material-icons icon-color">
+          arrow_forward
+        </i>VÆLG PLACERING
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<router-outlet></router-outlet>

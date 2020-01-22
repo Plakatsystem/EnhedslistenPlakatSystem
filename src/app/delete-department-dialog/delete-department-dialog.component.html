@@ -1,0 +1,18 @@
+<div>
+  <div class="content-container">
+    <h2>Er du sikker på du vil slette <strong>{{data.name}}</strong>?</h2>
+    <p>Hvis du sletter afdelingen, vil alle teams og data i denne afdeling blive slettet.</p>
+    <mat-dialog-actions>
+      <button mat-button class="cancel-btn red" (click)="closeDialog()"><i
+        class="material-icons icon-cancel-color alt-red">
+        clear
+      </i>NEJ
+      </button>
+      <button mat-button class="accept-btn green" [mat-dialog-close]="true" id="delete"><i
+        class="material-icons icon-color">
+        done
+      </i>JA
+      </button>
+    </mat-dialog-actions>
+  </div>
+</div>

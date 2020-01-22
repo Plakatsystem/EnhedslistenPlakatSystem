@@ -1,0 +1,42 @@
+<div *ngIf="!done">
+  <h2 class="text-center">Opret ny plakat</h2>
+  <mat-dialog-content class="create-poster">Skriv navn og antal på den nye plakat
+    <mat-form-field class="poster-name">
+      <input id="poster-name" matInput placeholder="Plakat navn" [(ngModel)]="posterName" (change)="posterName = posterName.trim()" autofocus [formControl]="name" required (focus)="notFocused=inputFocus()" (focusout)="notFocused=true">
+      <mat-error *ngIf="name.invalid">Angiv venligst et plakatnavn</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input id="poster-amount" matInput placeholder="Antal plakater" [(ngModel)]="stock" type="number" min="0" [formControl]="amount" required>
+      <mat-error *ngIf="amount.invalid">Angiv antal plakater</mat-error>
+    </mat-form-field>
+  </mat-dialog-content>
+  <p class="text-color-red" *ngIf="error && notFocused">{{error}}</p>
+  <mat-dialog-actions>
+    <button mat-button class="cancel-button red" (click)="cancel()"><i
+      class="material-icons icon-cancel-color alt-red">
+      clear
+    </i>ANNULLER
+    </button>
+    <button mat-button class="create-button green" (click)="createPoster()"><i
+      class="material-icons icon-color">
+      arrow_forward
+    </i>OPRET
+    </button>
+  </mat-dialog-actions>
+</div>
+
+<div *ngIf="done">
+  <h2 class="text-center">Plakaten er oprettet</h2>
+  <mat-dialog-content class="created-poster">
+    <p><strong>Plakat navn:</strong> {{posterName}}</p>
+    <p><strong>Beholdning:</strong> {{stock}}</p>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button mat-button class="close-button green" (click)="cancel()"><i
+      class="material-icons icon-color">
+      done
+    </i>LUK
+    </button>
+  </mat-dialog-actions>
+</div>
+

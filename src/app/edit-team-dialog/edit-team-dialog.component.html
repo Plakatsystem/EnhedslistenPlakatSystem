@@ -1,0 +1,34 @@
+<div>
+  <div class="d-print-none" *ngIf="!loading">
+    <h2 *ngIf="!error">Du har nulstillet koden for team: <b>{{user.username}}</b></h2>
+    <mat-dialog-content *ngIf="!error">
+      <p><strong>Ny adgangskode:</strong> {{newPassword}}</p>
+    </mat-dialog-content>
+    <mat-dialog-content *ngIf="error">
+      <p style="text-align: center">Der skete en uventet fejl. Prøv venligst igen.</p>
+    </mat-dialog-content>
+
+    <p *ngIf="!error">HUSK at notere den nye adgangskode, du kan ikke se koden igen efterfølgende!</p>
+    <mat-dialog-actions [class.center-margin]="error">
+      <button mat-button class="close-button green" (click)="cancel()" [class.center-dialog-close-button]="error"><i
+        class="material-icons icon-color">
+        arrow_forward
+      </i>LUK
+      </button>
+      <button mat-button class="print-button blue" (click)="print()" *ngIf="!error"><i
+        class="material-icons icon-color-blue">
+        print
+      </i>PRINT
+      </button>
+    </mat-dialog-actions>
+  </div>
+  <div class="d-none d-print-block">
+    <p>Afdeling: {{user.department}}</p>
+    <p>Team: {{user.username}}</p>
+    <p>Team adgangskode: {{newPassword}}</p>
+    <br><br>
+  </div>
+  <div *ngIf="loading" class="center-margin">
+    <mat-spinner class="center-margin" color="#159F6B"></mat-spinner>
+  </div>
+</div>

@@ -1,0 +1,43 @@
+<div class="container">
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <div class="row">
+      <div class="col-md-6 center-margin">
+        <mat-card class="login-card">
+          <h2 class="center-text login-header">LOG IND</h2>
+          <mat-card-content>
+            <div class="row margin-bottom-15px">
+              <mat-form-field class="center-margin">
+                <input id="username" matInput placeholder="BRUGERNAVN" formControlName="username">
+                <mat-error
+                  *ngIf="!loginForm.controls.username.valid && (loginForm.controls.username.dirty || loginForm.controls.username.pristine)">
+                  Du skal udfylde et brugernavn
+                </mat-error>
+              </mat-form-field>
+            </div>
+            <div class="row">
+              <mat-form-field class="center-margin">
+                <input id="password" matInput placeholder="ADGANGSKODE" [type]="hidePassword ? 'password' : 'text'"
+                       formControlName="password">
+                <mat-error
+                  *ngIf="!loginForm.controls.password.valid && (loginForm.controls.password.dirty || loginForm.controls.password.pristine)">
+                  Du skal udfylde en adgangskode
+                </mat-error>
+              </mat-form-field>
+            </div>
+            <span class="center-text">
+              <p class="error text-color-red">{{errorMessage}}</p>
+          </span>
+            <div class="row">
+              <div class="center-margin">
+                <button id="login-btn" mat-button class="login-button green"><i class="material-icons icon-color">
+                  arrow_forward
+                </i>LOG IND
+                </button>
+              </div>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,42 @@
+.delete {
+  margin-top: 1em;
+  margin-bottom: 2em;
+}
+
+button:focus {
+  outline: 0;
+}
+
+.accept-btn,
+.cancel-btn{
+  border-radius: 0;
+  color: white;
+  margin-bottom: 15px;
+  width: 170px;
+  padding-left: 0;
+  float: left;
+  box-shadow: #878787 0 0 8px;
+  font-family: Maj-Regular, "Helvetica Neue", sans-serif !important;
+}
+.accept-btn {
+  margin-left: 12px !important;
+}
+
+.icon-color {
+  background-color: #158a6b;
+  border-radius: 0;
+  color: white;
+  float: left;
+  padding-top: 6px;
+  width: 36px;
+  height: 36px;
+}
+
+.icon-cancel-color {
+  border-radius: 0;
+  color: white;
+  float: left;
+  padding-top: 6px;
+  width: 36px;
+  height: 36px;
+}

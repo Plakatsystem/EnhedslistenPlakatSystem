@@ -1,0 +1,28 @@
+<div>
+  <div class="content-container">
+    <h2 class="text-center">Opret teams</h2>
+    <mat-dialog-content class="teams-number">Vælg hvor mange teams du ønsker at oprette
+      <mat-form-field class="number center-margin">
+        <mat-label>Antal teams</mat-label>
+        <mat-select [(ngModel)]="numberOfTeams">
+          <mat-option *ngFor="let number of numbers" [value]="number">
+            {{number}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </mat-dialog-content>
+
+    <mat-dialog-actions>
+      <button mat-button class="cancel-btn red" (click)="closeDialog()"><i
+        class="material-icons icon-cancel-color alt-red">
+        clear
+      </i>ANNULLER
+      </button>
+      <button mat-button class="accept-btn green" [mat-dialog-close]="numberOfTeams"><i
+        class="material-icons icon-color">
+        done
+      </i>OPRET
+      </button>
+    </mat-dialog-actions>
+  </div>
+</div>

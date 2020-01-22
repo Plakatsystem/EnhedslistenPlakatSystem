@@ -1,0 +1,22 @@
+<div>
+  <h2 mat-dialog-title class="text-center">Rediger afdeling</h2>
+  <mat-dialog-content>
+    <mat-form-field>
+      <input matInput placeholder="Afdeling" [(ngModel)]="department.name" (change)="department.name = department.name.trim()" [formControl]="name" required (focus)="inputFocus()" (focusout)="notFocused=true">
+      <mat-error *ngIf="name.invalid">Angiv venligst et afdelingsnavn</mat-error>
+    </mat-form-field>
+  </mat-dialog-content>
+  <p class="text-color-red" *ngIf="error && notFocused">{{error}}</p>
+  <mat-dialog-actions>
+    <button mat-button class="create-button red" (click)="cancel()"><i
+      class="material-icons icon-cancel-color alt-red">
+      clear
+    </i>ANNULER
+    </button>
+    <button mat-button class="create-button green" (click)="updateDepartment()"><i
+      class="material-icons icon-color">
+      done
+    </i>GEM
+    </button>
+  </mat-dialog-actions>
+</div>

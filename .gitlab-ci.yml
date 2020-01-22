@@ -1,0 +1,41 @@
+# This is a custom gitlab-ci file created for
+# an angular project with deployment
+
+# Custom docker image by a5vTech <a5vgaminghq@gmail.com>
+image: registry.gitlab.com/a5vtech/hovedopgave:latest
+services:
+cache:
+  paths:
+    - node_modules/
+test:
+  stage: test
+  script:
+    - echo '-----RUNNING TESTS-----'
+    - echo 'installing dependencies'
+    - npm install
+#  when: manual
+#    - ng build --prod --output-path public --base-href ./
+    - echo '-----RUNNING UNIT TESTS-----'
+   # - ng test
+    - echo '-----RUNNING E2E TESTS-----'
+    #- ng e2e
+
+deployment development:
+  stage: deploy
+  script:
+    - echo 'Building project for development'
+    - ng build --output-path public --base-href ./
+    - echo '-----DEPLOYING PROJECT-----'
+    - firebase deploy --only hosting -m "Deployment" --token $FIREBASE_TOKEN
+  when: manual
+
+deployment production:
+  stage: deploy
+  script:
+    - echo 'Building project for production'
+    - ng build --output-path public --base-href ./ --prod
+    - echo '-----DEPLOYING PROJECT-----'
+    - firebase deploy --only hosting -m "Deployment" --token $FIREBASE_TOKEN
+  when: manual
+
+

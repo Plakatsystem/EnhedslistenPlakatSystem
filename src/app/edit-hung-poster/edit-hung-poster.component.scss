@@ -1,0 +1,42 @@
+.center-box {
+    position: relative;
+    transform: translateY(-50%);
+    top: 30%;
+}
+
+.accept-btn {
+border-radius: 0;
+color: white;
+margin-top: 10%;
+width: 170px;
+padding-left: 0;
+box-shadow: #878787 0 0 8px;
+font-family: Maj-Regular, "Helvetica Neue", sans-serif !important;
+}
+
+.icon-color {
+background-color: #158a6b;
+border-radius: 0;
+color: white;
+float: left;
+padding-top: 6px;
+width: 36px;
+height: 36px;
+}
+
+.icon-red {
+    background-color: rgb(190, 1, 42) !important;
+}
+
+h1 {
+    padding-top: 10%;
+}
+
+mat-form-field {
+    margin-top: 10%;
+}
+
+h4 {
+   font-size: 16px;
+   margin-top: 75%;
+}

@@ -1,0 +1,275 @@
+@font-face {
+  font-family: Maj-Bold;
+  src: url("assets/fonts/Maj-Bold.otf") format("truetype");
+}
+
+@font-face {
+  font-family: Maj-Light;
+  src: url("assets/fonts/Maj-Light.otf") format("truetype");
+}
+
+@font-face {
+  font-family: Maj-Regular;
+  src: url("assets/fonts/Maj-Regular.otf") format("truetype");
+}
+
+html, body {
+  height: 100%;
+  font-family: Maj-Regular, "Helvetica Neue", sans-serif !important;
+}
+
+body {
+  margin: 0;
+  font-family: Maj-Regular, "Helvetica Neue", sans-serif !important;
+  background-color: #e5e5e5 !important;
+}
+
+h1 {
+  font-family: Maj-Bold, "Helvetica Neue", sans-serif;
+}
+
+h2, p {
+  font-family: Maj-Regular, "Helvetica Neue", sans-serif;
+}
+
+h3 {
+  font-family: Maj-Light, "Helvetica Neue", sans-serif;
+}
+
+.red {
+  background-color: #D0004D;
+}
+
+.alt-red {
+  background-color: #bd0046;
+}
+
+.green {
+  background-color: #159F6B;
+}
+
+.alt-green {
+  background-color: #2F9460;
+}
+
+.dark-green {
+  background-color: #007266;
+}
+
+.blue {
+  background-color: #494ade;
+}
+
+.alt-blue {
+  background-color: #3c3dd6;
+}
+
+.yellow {
+  background-color: #FFCF20;
+}
+
+.alt-yellow {
+  background-color: #dbb21d;
+}
+
+.orange {
+  background-color: #F18A2D;
+}
+
+.pink {
+  background-color: #F5AAAD;
+}
+
+.purple {
+  background-color: #703290;
+}
+
+.alt-purple {
+  background-color: #612982;
+}
+
+.cyan {
+  background-color: #8BD0E4;
+}
+
+
+.font {
+  font-family: Maj-Regular, "Helvetica Neue", sans-serif !important;
+}
+
+.center-margin {
+  margin: 0 auto;
+}
+
+.no-border-radius {
+  border-radius: 0 !important;
+}
+
+.container-web {
+  margin: 1.5% auto;
+  background-color: white;
+  height: 70%;
+  min-height: 70%;
+  min-width: 60%;
+  width: 60%;
+}
+
+.mat-dialog-container {
+  border-radius: 0 !important;
+}
+
+.mat-sort-header-arrow {
+  color: white;
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 812px) {
+  .container-web {
+    // margin: 3% auto 0 auto;
+    width: 100%;
+    min-height: 84%;
+    background-color: white;
+  }
+}
+
+@media print {
+  .cdk-overlay-pane {
+    max-width: 100% !important;
+    width: 100% !important;
+    height: 100% !important;
+  }
+}
+
+.tooltipClass {
+  background: #494ade;
+  font-family: Maj-Regular, "Helvetica Neue", sans-serif !important;
+  font-size: 13px;
+}
+
+.infoWindowButton {
+  border: 0;
+  text-align: center;
+  line-height: 35px;
+  background-color: #494ade;
+  color: white;
+  margin-bottom: 10px;
+  width: 93%;
+  padding: 0;
+  font-family: Maj-Regular, "Helvetica Neue", sans-serif !important;
+}
+
+.infoWindowButton:hover {
+  background-color: #5656df;
+}
+
+.infoWindowButton:hover > .infoWindowIcon {
+  background-color: #3d3ddf;
+}
+
+.infoWindowIcon {
+  background-color: #3031e0;
+  float: left;
+  padding-top: 6px;
+  width: 36px;
+  height: 36px;
+}
+
+.gm-ui-hover-effect {
+  top: 0 !important;
+  right: 0 !important;
+}
+
+.gm-style-iw-d {
+  overflow: hidden !important;
+  width: 188px !important;
+}
+
+.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
+  border-color: rgb(66, 134, 244);
+}
+
+.mat-radio-button.mat-accent .mat-radio-inner-circle {
+  color: rgb(66, 134, 244);
+  background-color: rgb(66, 134, 244);
+}
+
+.mat-form-field-infix {
+  width: 250px !important;
+}
+
+/* settings for infowindow on iphone5  */
+@media (device-height: 568px) and (max-device-width: 320px) and (-webkit-min-device-pixel-ratio: 2) {
+  h2 {
+    font-size: 20px !important;
+  }
+
+  p {
+    margin-bottom: 12px !important;
+  }
+
+  .mat-form-field-infix {
+    width: 200px !important;
+  }
+
+  .menu-btn {
+    width: 265px !important;
+  }
+  .color-explaination-div{
+    font-size: 14px;
+    bottom: 37px !important;
+  }
+
+}
+
+.mat-button-focus-overlay {
+  background-color: transparent !important;
+}
+
+@media all and (device-width: 768px) and (device-height: 1024px) and (orientation: portrait) {
+  .body {
+    height: 1024px !important;
+  }
+}
+
+/* iPad with landscape orientation. */
+@media all and (device-width: 768px) and (device-height: 1024px) and (orientation: landscape) {
+  .body {
+    height: 768px !important;
+  }
+}
+
+/* iPhone 5
+You can also target devices with aspect ratio. */
+@media screen and (device-aspect-ratio: 40/71) {
+  .body {
+    height: 500px !important;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  body {
+    overflow-y: hidden !important;
+  }
+
+}
+
+/* iPhone 8 Plus */
+@media only screen and (device-width : 414px) and (device-height : 736px) and (-webkit-device-pixel-ratio : 3) {
+  .color-explaination-div {
+    bottom: 64px !important;
+  }
+}
+
+/* iPhone X */
+@media only screen and (device-width : 375px) and (device-height : 812px) and (-webkit-device-pixel-ratio : 3) {
+  .color-explaination-div {
+    bottom: 77px !important;
+  }
+}
+
+.mat-progress-spinner circle, .mat-spinner circle {
+  stroke: #159F6B !important;
+}
+
+.mat-paginator {
+  display: contents !important;
+}

@@ -1,0 +1,14 @@
+<mat-toolbar class="transparent">
+    <span>
+        <button id="back-btn" (click)='goBack()' mat-button *ngIf="router.url !=='/menu'">{{'TILBAGE'}}</button>
+    </span>
+
+    <span class="nav-fill"></span>
+
+    <span>
+        <button id="logout-btn" (click)="auth.signOut()" routerLink="/" mat-button>LOG UD</button>
+    </span>
+</mat-toolbar>
+
+
+

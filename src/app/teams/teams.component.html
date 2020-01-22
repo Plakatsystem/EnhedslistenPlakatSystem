@@ -1,0 +1,66 @@
+<app-navbar></app-navbar>
+<div class="container-outer d-print-none">
+  <div class="container container-web">
+    <h1 class="text-center">TEAMS</h1>
+    <div class="center-margin table-div">
+
+
+      <mat-form-field style="width: 250px!important;">
+        <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Søg" autocomplete="off">
+      </mat-form-field>
+      <mat-table [dataSource]="dataSource" class="mat-elevation-z3" matSort>
+        <mat-header-row *matHeaderRowDef="columnList" class="purple header"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: columnList, let i = index;"></mat-row>
+
+        <ng-container matColumnDef="username">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>TEAM</mat-header-cell>
+          <mat-cell *matCellDef="let user">
+            {{user.username}}
+          </mat-cell>
+        </ng-container>
+
+
+        <ng-container matColumnDef="teamType">
+          <mat-header-cell *matHeaderCellDef>TYPE</mat-header-cell>
+          <ng-container *matCellDef="let user">
+            <mat-cell *ngIf="user.username.includes('O')">
+              OPHÆNGNING
+            </mat-cell>
+            <mat-cell *ngIf="user.username.includes('N')">
+              NEDTAGNING
+            </mat-cell>
+          </ng-container>
+        </ng-container>
+
+        <ng-container matColumnDef="password">
+          <mat-header-cell *matHeaderCellDef>ADGANGSKODE</mat-header-cell>
+          <mat-cell *matCellDef="let user">**********
+          </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="edit">
+          <mat-header-cell *matHeaderCellDef></mat-header-cell>
+          <mat-cell *matCellDef="let user" class="flex-end">
+            <mat-icon (click)="edit(user)" class="icon-edit" matTooltipClass="tooltipClass" matTooltip="Nulstil kode"
+                      matTooltipPosition="above" matTooltipShowDelay="750" matTooltipHideDelay="250">cached
+            </mat-icon>
+
+            <button id="delete-btn" mat-icon-button>
+              <mat-icon (click)="openDelete(user)" matTooltipClass="tooltipClass" matTooltip="Slet"
+                        matTooltipPosition="above" matTooltipShowDelay="750" matTooltipHideDelay="250">delete
+              </mat-icon>
+            </button>
+
+          </mat-cell>
+        </ng-container>
+      </mat-table>
+      <mat-paginator [pageSizeOptions]="[5, 10, 25, 50, 100]"></mat-paginator>
+
+
+      <button mat-button id="create-team-btn" class="create-button green" (click)="openCreateTeam()"><i
+        class="material-icons icon-color">
+        add
+      </i>OPRET TEAM
+      </button>
+    </div>
+  </div>
+</div>
